@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Android-Level5-Assignment2</string>
     <string name="action_settings">Settings</string>
+    <string name="input_title">Title</string>
+    <string name="input_platform">Platform</string>
+    <string name="input_day">Day</string>
+    <string name="input_month">Month</string>
+    <string name="input_year">Year</string>
 </resources>
