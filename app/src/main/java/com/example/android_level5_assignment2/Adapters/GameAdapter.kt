@@ -6,13 +6,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_level5_assignment2.Models.Game
+import com.example.android_level5_assignment2.R
+import kotlinx.android.synthetic.main.game_item.view.*
 
 class GameAdapter(private val games: List<Game>) :
     RecyclerView.Adapter<GameAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameAdapter.ViewHolder {
         return ViewHolder(
             LayoutInflater
-                .from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
+                .from(parent.context).inflate(R.layout.game_item, parent, false)
         )
     }
 
@@ -28,11 +30,10 @@ class GameAdapter(private val games: List<Game>) :
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        //create a dynamic textView to put into the XML content of the recyclerView item thingy
-        private val tvAnswer: TextView = itemView.findViewById(android.R.id.text1)
-
         fun bind(game: Game) {
-            tvAnswer.text = game.title
+            itemView.tvTitle.text = game.title
+            itemView.tvPlatform.text = game.platform
+            itemView.tvReleaseDate.text = game.releaseDate.toString()
         }
     }
 
